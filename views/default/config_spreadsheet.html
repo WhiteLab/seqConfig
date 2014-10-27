@@ -1,0 +1,19 @@
+{{extend 'layout.html'}}
+<h3>IGSB Illimina Sequencer Config Creation form </h3> 
+
+<p>{{=form}}</p>
+
+
+
+<h4>Template Spreadsheets </h4>
+<ul>
+{{for file in template:}}
+{{=LI(A(file.f_name,_href=URL("default","download_template", args=file.id)))}}
+{{pass}}
+</ul>
+
+<h4>Uploaded Runs </h4>
+<p>{{=form2}}</p>
+
+<br>
+{{=A('Manage Readme files', _href=URL('default','manageReadme'))}}
