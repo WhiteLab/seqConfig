@@ -610,8 +610,7 @@ def writeReadme():
         msg = MIMEMultipart()
         content =' Run Name: '+str(row_seqid.f_run_name)+'\n'+'Run number: '+str(num)+'\n' +' Readme file status: Waiting for Approval'
         me='hgaclims@gmail.com' 
-        mt=['pmakella@uchicago.edu','jhtuteja@uchicago.edu', 'jgrundstad@uchicago.edu','adamcdidier@gmail.com','murphymarkw@uchicago.edu',
-            'cedwards.uc@gmail.com', 'gkuffel22@gmail.com']
+        mt=['pmakella@uchicago.edu','jhtuteja@uchicago.edu', 'jgrundstad@uchicago.edu','adamcdidier@gmail.com','murphymarkw@uchicago.edu']
         #mt =['pmakella@uchicago.edu']
       
         msg[ 'Subject' ] =  'Run Name: '+str(row_seqid.f_run_name) + '   --   created'
@@ -707,7 +706,7 @@ def makeReadmeExcel(fn,row_seqid,num):
  
 def manageReadme():
     query =  db.t_readme
-    sortorder=[db.t_readme.f_file_num]
+    sortorder=[~db.t_readme.f_file_num]
   
     db.t_readme.created_on.readable = db.t_readme.created_by.readable = db.t_readme.modified_on.readable = db.t_readme.modified_by.readable = True
   
